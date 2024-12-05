@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>高さ計算</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function calc() {
+            var sheight = document.getElementById('s-height');
+            var distance = document.getElementById('distance');
+            var angle = document.getElementById('angle');
+            var sh2 = parseInt(sheight.value);
+            console.log(sheight.value + ", " + distance.value + ", " + angle.value);
+            var angle2 = angle.value * (Math.PI / 180);
+            var height = sh2 + distance.value * Math.tan(angle2);
+			console.log(height);
+			var h2 = parseInt(height);
+			console.log(h2)
+			document.getElementById('height').textContent = h2;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>高さ計算</h1>
+    <p>
+        <label for="scope-height">スコープの高さ(m)</label>
+        <input type="number" name="s-height" id="s-height" value="" required>
+    </p><br>
+    <p>
+        <label for="distance-to">対象物との距離(m)</label>
+        <input type="number" name="distance" id="distance" value="" required>
+    </p><br>
+    <p>
+        <label for="angle-to">角度(°)</label>
+        <input type="number" name="angle" id="angle" value="" required>
+    </p><br>
+    <p>
+        <input type="button" value="計算" onclick="calc()">
+    </p><br>
+    <p>
+        <dev>対象物の高さ:約</dev>
+        <dev id="height">00</dev>
+        <dev>m</dev>
+    </p><br>
+    <a href="https://github.com/sho11decade/height">github</a>
+</body>
+
+</html>
